@@ -1,0 +1,51 @@
+
+.scorecontainer {
+    margin-top: 30px;
+    width: 85dvw;
+    min-width: 300px;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 3px solid #566782;
+    border-radius: 5px;
+    height: 120px;
+    padding: 10px;
+}
+.rps {
+    margin-bottom: 5px;
+    margin-left: 15px;
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.rps ul li{
+    margin-bottom: -7px;
+    list-style-type: none;
+}
+
+.score {
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95px;
+    height: 85px;
+}
+.score p {
+    margin-top: 7px;
+    margin-bottom: -7px;
+    font-size: 12px;
+    font-weight: bold;
+    color:#6674C6;
+}
+.score h3 {
+    color: hsl(250, 13%, 37%);
+    font-size: 50px;
+    letter-spacing: -6px;
+    margin-right: 6px;
+}

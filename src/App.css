@@ -1,0 +1,13 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+
+  height: 100dvh;
+  background: linear-gradient(#1E3253, #161F40);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
