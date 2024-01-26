@@ -1,7 +1,8 @@
 
 import './App.css'
 import Choice from './components/Choice'
-import Score from './components/score'
+import Rules from './components/Rules'
+import Score from './components/Score'
 
 
 
@@ -11,7 +12,7 @@ function App() {
     <>
     <Score />
     <Choice />
-      <h1>Hi</h1>
+    <Rules />
     </>
   )
 }

@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-
+ 
   height: 100dvh;
   background: linear-gradient(#1E3253, #161F40);
   display: flex;

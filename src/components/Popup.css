@@ -1,0 +1,44 @@
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+   
+    
+}
+.rulestext {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.rulestext h1 {
+    font-size: 40px;
+    color: #404662;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+}
+  .closebtn {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.closebtn img {
+    width: 25px;
+    height: 25px;
+}
+.imgrules {
+    width: 350px;
+    height: 320px;
+}

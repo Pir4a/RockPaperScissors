@@ -1,0 +1,25 @@
+.buttonrules {
+    cursor: pointer;
+    background-color: transparent;
+    margin: auto;
+    margin-top: 15dvh;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border: 2px solid #888FAA;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonrules h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+@media (min-width: 769px){
+    .buttonrules{
+    /* tout en bas a droite lol*/
+}
+}

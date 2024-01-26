@@ -8,7 +8,12 @@ function Choice() {
   return (
     <div className='choicecontainer'>
         <div className='twofirsts'>
-            <div className='outer blue'><div className='inner'><img src={Iconpaper}/></div></div>
+            <div className='outer blue'>
+                <div className='line'></div>
+                <div className='line left'></div>
+                <div className='line right'></div>
+                <div className='inner'><img src={Iconpaper}/></div>
+            </div>
             <div className='outer yellow'><div className='inner'><img src={Iconscissors}/></div></div>
         </div>
             <div className='lastone'>
