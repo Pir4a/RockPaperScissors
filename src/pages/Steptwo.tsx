@@ -9,7 +9,7 @@ import './StepTwo.css'
 import Empty from '../components/Empty'
 import { Link } from 'react-router-dom'
 
-function Steptwo(props: any) {
+function Steptwo() {
     
   const choice  = useChoice()
   const updateChoice = useChoiceUpdate()
@@ -50,9 +50,14 @@ function houseChoice(){
 
 const [isVictory, setVictory] = useState(false)
 
-function winOrLose(){
+
+
+
+function winOrLose(): any{
   let victory = ''
-  if(chosen=='Scissors'){
+
+
+  if(chosen=='Scissors')  {
     if(house==1){
      
       return victory = "IT'S A TIE!", setVictory(false)
@@ -65,7 +70,10 @@ function winOrLose(){
       setVictory(current => !current)
 
       return victory= "YOU WIN", setVictory(current => !current)
-    }}
+    }
+  }
+
+
     else if(chosen=='Rock'){
     if(house==1){
 
@@ -79,7 +87,9 @@ function winOrLose(){
     else if(house==3){
       return victory= "YOU LOSE"
     }
-  }else if(chosen=='Paper'){
+  }
+  
+  else if(chosen=='Paper'){
     if(house==1){
       return victory = "YOU LOSE"
     }
