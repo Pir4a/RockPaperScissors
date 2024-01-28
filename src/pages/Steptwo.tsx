@@ -29,11 +29,14 @@ function returnchoice(){
     return <Paper/>
   }
 }
+let house:number
 
-let house = Math.floor(Math.random()* 3) +1
+
+house = Math.floor(Math.random() * 3) +1
 
 function houseChoice(){
- 
+
+  console.log(house)
   if(house==1){
     return <Scissors/>
   }
@@ -45,40 +48,51 @@ function houseChoice(){
   }
 }
 
+const [isVictory, setVictory] = useState(false)
+
 function winOrLose(){
   let victory = ''
   if(chosen=='Scissors'){
     if(house==1){
-      return victory = "IT'S A TIE!"
+     
+      return victory = "IT'S A TIE!", setVictory(false)
+      
     }
-    if(house==2){
+    else if(house==2){
       return victory="YOU LOSE"
     }
-    if(house==3){
-      return victory= "YOU WIN"
+    else if(house==3){
+      setVictory(current => !current)
+
+      return victory= "YOU WIN", setVictory(current => !current)
     }}
     else if(chosen=='Rock'){
     if(house==1){
-      return victory = "YOU LOSE"
+
+      setVictory(current => !current)
+
+      return victory = "YOU WIN", setVictory(current => !current)
     }
-    if(house==2){
-      return victory="IT'S A TIE!"
+    else if(house==2){
+      return victory="IT'S A TIE!", setVictory(false)
     }
-    if(house==3){
+    else if(house==3){
       return victory= "YOU LOSE"
     }
   }else if(chosen=='Paper'){
     if(house==1){
       return victory = "YOU LOSE"
     }
-    if(house==2){
-      return victory="YOU WIN"
+    else if(house==2){
+      setVictory(current => !current)
+      return victory="YOU WIN", setVictory(current => !current)
     }
-    if(house==3){
-      return victory= "IT'S A TIE!"
+    else if(house==3){
+      return victory= "IT'S A TIE!", setVictory(false)
     }
+
   }
-  
+
 }
 
 
@@ -86,7 +100,7 @@ function winOrLose(){
   return  (<>
     <div className='choicecontainer'> 
         <div className='twofirsts'>
-         <div className='pick'> <div className='glow'></div>{returnchoice()}
+         <div className='pick r'> <div className={isVictory ? 'glow' : ''}></div>{returnchoice()}
           <p>YOU PICKED</p>
           </div>
           <div className='pick'>
@@ -94,7 +108,7 @@ function winOrLose(){
               
               
               <div className="absolute"><Empty/></div>
-              <div className='house'>{houseChoice()}</div>
+              <div className='house'> <div className={isVictory ? '' : 'glow'}></div>{houseChoice()}</div>
               <p>THE HOUSE PICKED</p>
                   </div>
                   </div>
