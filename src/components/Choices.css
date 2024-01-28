@@ -29,7 +29,8 @@
     
 }
 .line {
-    left: 100%;
+    left: 40%;
+    top: 40%;
     position: absolute;
     width: 80px;
     height: 20px;
@@ -37,14 +38,14 @@
 }
 .right {
     z-index: -1;
-    left: 126%;
+    left: 53%;
     top: 100%;
     transform: rotate(-60deg);
 }
 
 .left {
     z-index: -1;
-    left: 60%;
+    left: 25%;
     top: 100%;
     transform: rotate(60deg);
 }
@@ -62,6 +63,7 @@
 }
 
 .twofirsts {
+    position: relative;
     gap: 60px;
     display: flex;
     align-items: center;
@@ -101,5 +103,18 @@
         height: 120px;
         border-radius: 50%;
         
+    }
+    .right {
+        z-index: -1;
+        left: 48%;
+        top: 100%;
+        transform: rotate(-60deg);
+    }
+    
+    .left {
+        z-index: -1;
+        left: 25%;
+        top: 100%;
+        transform: rotate(60deg);
     }
 }
