@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Iconrock from "../assets/icon-rock.svg"
 
 

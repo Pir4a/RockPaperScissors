@@ -1,8 +1,8 @@
-import React from 'react'
+
 import { useState } from 'react'
 import "../components/Choices.css"
 import Paper from '../components/Paper'
-import { useChoice, useChoiceUpdate } from '../ChoiceContext'
+import { useChoice} from '../ChoiceContext'
 import Scissors from '../components/Scissors'
 import Rock from '../components/Rock'
 import './StepTwo.css'
@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 function Steptwo() {
     
   const choice  = useChoice()
-  const updateChoice = useChoiceUpdate()
+ 
 
   
   let chosen = choice?.choice

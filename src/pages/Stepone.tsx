@@ -1,15 +1,14 @@
-import React, { useContext, useState } from 'react'
+
 import '../components/Choices.css'
 import { Link } from 'react-router-dom'
 import Paper from '../components/Paper'
 import Scissors from '../components/Scissors'
 import Rock from '../components/Rock'
-import { useChoice, useChoiceUpdate } from '../ChoiceContext'
+import {useChoiceUpdate } from '../ChoiceContext'
 
 
 function StepOne() {
 
-  const choice  = useChoice()
   const updateChoice = useChoiceUpdate()
     
   return (
