@@ -3,6 +3,26 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
+
+}
+.r {
+    position: relative;
+}
+.glow {
+    top: 0%;
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    animation-name: slidein;
+    animation-duration: 500ms;
+    animation-delay: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    transform: scale(0%);
+    box-shadow: 0px 0px 0px 20px rgba(255,255,255,0.03),0px 0px 0px 50px rgba(255,255,255,0.02),0px 0px 0px 90px rgba(255,255,255,0.02);
+
 }
 .pick p {
     color: white;
@@ -10,4 +30,67 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 15px;
     font-weight: bold;
+}
+@keyframes slidein {
+    from {
+        transform: scale(20%);
+    }
+    to {
+        transform: scale(100%);
+    }
+}
+
+.house {
+    position: relative;
+    animation-name: slidein;
+    animation-duration: 950ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    transform: scale(0%);
+}
+.absolute {
+    z-index: -1;
+    position: absolute;
+}
+
+
+@keyframes winorlost {
+    from {
+        transform: scale(0%);
+    }
+    to {
+        transform: scale(100%);
+    }
+
+}
+
+.winorloss {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation-name: slidein;
+    animation-duration: 500ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    transform: scale(0%);
+}
+.winorloss h1 {
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 55px;
+    letter-spacing: -1px;
+
+}
+.playagain {
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 250px;
+    height: 54px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color: #4D4C5F;
 }
