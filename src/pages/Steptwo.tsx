@@ -54,7 +54,8 @@ const [isVictory, setVictory] = useState(false)
 
 
 function winOrLose(): any{
-  let victory = ''
+  // @ts-ignore
+    let victory = ''
 
 
   if(chosen=='Scissors')  {

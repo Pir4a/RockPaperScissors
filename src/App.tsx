@@ -5,7 +5,7 @@ import Rules from './components/Rules'
 import Score from './components/Score'
 import StepOne from './pages/Stepone'
 import Steptwo from './pages/Steptwo'
-import { createContext, useState } from 'react'
+// @ts-ignore
 import { ChoiceProvider } from "./ChoiceContext"
 
 
