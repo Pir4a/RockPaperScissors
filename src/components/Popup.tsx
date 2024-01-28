@@ -1,4 +1,4 @@
-import React from 'react'
+
 import "./Popup.css"
 import imagerules from "../assets/image-rules.svg"
 import iconclose from "../assets/icon-close.svg"

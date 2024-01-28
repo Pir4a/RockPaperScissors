@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Iconpaper from "../assets/icon-paper.svg"
 
 

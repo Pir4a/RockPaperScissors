@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Iconscissors from "../assets/icon-scissors.svg"
 
 

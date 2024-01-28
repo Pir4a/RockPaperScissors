@@ -1,4 +1,4 @@
-import React from 'react'
+
 import "./Rules.css"
 import Popup from './Popup'
 import { useState } from 'react'
