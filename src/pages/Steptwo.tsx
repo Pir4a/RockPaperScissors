@@ -8,14 +8,22 @@ import Rock from '../components/Rock'
 import './StepTwo.css'
 import Empty from '../components/Empty'
 import { Link } from 'react-router-dom'
+import {useScore, useScoreUpdate } from '../ScoreContext'
+
 
 
 function Steptwo() {
     
   const choice  = useChoice()
- 
 
-  
+  const [isVictory, setIsVictory] = useState('')
+  const renderVictory = useRef('')
+
+    useEffect(()=>{
+    setIsVictory(renderVictory.current)
+  })
+
+
   let chosen = choice?.choice
 
 function returnchoice(){
@@ -32,10 +40,7 @@ function returnchoice(){
 }
 
 
-
-let house:number
-
-house = Math.floor(Math.random() * 3) +1
+const house = Math.floor(Math.random() * 3) +1
 
 function houseChoice(){
 
@@ -51,28 +56,21 @@ function houseChoice(){
 }
 
 
-const [isVictory, setIsVictory] = useState('')
-const renderVictory = useRef('')
-
-useEffect(()=>{
-  setIsVictory(renderVictory.current)
-})
-
-
-
-function winOrLose(): any{
+function winOrLose(){
   // @ts-ignore
     
 
 
   if(chosen=='Scissors')  {
     if(house==1){
+      
       return renderVictory.current="IT'S A TIE!"
     }
     else if(house==2){
       return renderVictory.current="YOU LOSE"
     }
     else if(house==3){
+
       return renderVictory.current="YOU WIN"
     }
   }
@@ -94,7 +92,7 @@ function winOrLose(): any{
       return renderVictory.current="YOU LOSE"
     }
     else if(house==2){
-      
+      prevScore.current++
       return renderVictory.current="YOU WIN"
     }
     else if(house==3){
@@ -104,6 +102,16 @@ function winOrLose(): any{
   }
 
 }
+
+const updateScore = useScoreUpdate()
+const score = useScore()
+let prevScore = useRef(0)
+console.log(prevScore.current-1)
+  useEffect(()=>{
+    updateScore(prevScore.current-1)
+  },[prevScore.current])
+
+
 
 
 
@@ -126,6 +134,7 @@ function winOrLose(): any{
         </div>  
         <div className='winorloss'>
         <h1 className='delay'>{winOrLose()}</h1>
+        
         <Link to="/"><button className='playagain'><p>PLAY AGAIN</p></button></Link>
       </div>  
     </>

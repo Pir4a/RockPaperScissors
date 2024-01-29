@@ -1,8 +1,13 @@
 
+import { ScoreProvider, useScore, useScoreUpdate } from "../ScoreContext"
 import "./Score.css"
 
 
 function Score() {
+
+    const score = useScore()
+    
+
   return (
         <div className='scorecontainer'>
             <div className='rps'>
@@ -14,7 +19,7 @@ function Score() {
             </div>
             <div className='score'>
                 <p>SCORE</p>
-                <h3>12</h3>
+                <h3>{score?.score}</h3>
             </div>
         </div>
  )

@@ -7,6 +7,7 @@ import StepOne from './pages/Stepone'
 import Steptwo from './pages/Steptwo'
 // @ts-ignore
 import { ChoiceProvider } from "./ChoiceContext"
+import { ScoreProvider } from './ScoreContext'
 
 
  
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <>
+    <ScoreProvider>
     <ChoiceProvider>
       <Score />
       <Routes>
@@ -23,6 +25,7 @@ function App() {
       </Routes>
       <Rules />
     </ChoiceProvider>
+    </ScoreProvider>
     </>
   )
 }
