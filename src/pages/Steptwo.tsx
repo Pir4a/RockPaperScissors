@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import "../components/Choices.css"
 import Paper from '../components/Paper'
 import { useChoice} from '../ChoiceContext'
@@ -8,6 +8,7 @@ import Rock from '../components/Rock'
 import './StepTwo.css'
 import Empty from '../components/Empty'
 import { Link } from 'react-router-dom'
+
 
 function Steptwo() {
     
@@ -22,21 +23,22 @@ function returnchoice(){
   if (chosen== "Scissors"){
     return <Scissors/>
   }
-  if (chosen == "Rock"){
+  else if (chosen == "Rock"){
     return <Rock/>
   }
   else if (chosen == "Paper"){
     return <Paper/>
   }
 }
-let house:number
 
+
+
+let house:number
 
 house = Math.floor(Math.random() * 3) +1
 
 function houseChoice(){
 
-  console.log(house)
   if(house==1){
     return <Scissors/>
   }
@@ -48,58 +50,55 @@ function houseChoice(){
   }
 }
 
-const [isVictory, setVictory] = useState(false)
 
+const [isVictory, setIsVictory] = useState('')
+const renderVictory = useRef('')
+
+useEffect(()=>{
+  setIsVictory(renderVictory.current)
+})
 
 
 
 function winOrLose(): any{
   // @ts-ignore
-    let victory = ''
+    
 
 
   if(chosen=='Scissors')  {
     if(house==1){
-     
-      return victory = "IT'S A TIE!", setVictory(false)
-      
+      return renderVictory.current="IT'S A TIE!"
     }
     else if(house==2){
-      return victory="YOU LOSE"
+      return renderVictory.current="YOU LOSE"
     }
     else if(house==3){
-      setVictory(current => !current)
-
-      return victory= "YOU WIN", setVictory(current => !current)
+      return renderVictory.current="YOU WIN"
     }
   }
 
-
-    else if(chosen=='Rock'){
+  else if(chosen=='Rock'){
     if(house==1){
-
-      setVictory(current => !current)
-
-      return victory = "YOU WIN", setVictory(current => !current)
-    }
+        return renderVictory.current="YOU WIN"
+      }
     else if(house==2){
-      return victory="IT'S A TIE!", setVictory(false)
-    }
-    else if(house==3){
-      return victory= "YOU LOSE"
+      return renderVictory.current="IT'S A TIE!"
+      }
+     else if(house==3){
+      return renderVictory.current="YOU LOSE"
     }
   }
   
   else if(chosen=='Paper'){
     if(house==1){
-      return victory = "YOU LOSE"
+      return renderVictory.current="YOU LOSE"
     }
     else if(house==2){
-      setVictory(current => !current)
-      return victory="YOU WIN", setVictory(current => !current)
+      
+      return renderVictory.current="YOU WIN"
     }
     else if(house==3){
-      return victory= "IT'S A TIE!", setVictory(false)
+      return renderVictory.current= "IT'S A TIE!"
     }
 
   }
@@ -111,7 +110,7 @@ function winOrLose(): any{
   return  (<>
     <div className='choicecontainer'> 
         <div className='twofirsts'>
-         <div className='pick r'> <div className={isVictory ? 'glow' : ''}></div>{returnchoice()}
+         <div className='pick r'><div className={isVictory=='YOU WIN' ? 'glow' : ''}></div>{returnchoice()}
           <p>YOU PICKED</p>
           </div>
           <div className='pick'>
@@ -119,7 +118,7 @@ function winOrLose(): any{
               
               
               <div className="absolute"><Empty/></div>
-              <div className='house'> <div className={isVictory ? '' : 'glow'}></div>{houseChoice()}</div>
+              <div className='house'> <div className={isVictory=='YOU LOSE' ? 'glow' : ''}></div>{houseChoice()}</div>
               <p>THE HOUSE PICKED</p>
                   </div>
                   </div>
