@@ -5,7 +5,7 @@ import iconclose from "../assets/icon-close.svg"
 
 function Popup(props: any) {
   return (props.trigger) ? (
-  <div className="popupcontainer">
+  <div className="popupcontainer" onClick={()=> props.setTrigger(false)}>
     <div className='popup'>
         
             <div className='rulestext'><h1>RULES</h1></div>
