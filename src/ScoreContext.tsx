@@ -1,4 +1,4 @@
-import React, {createContext, useContext, useState} from "react";
+import React, {createContext, useContext, useReducer} from "react";
 
 type ScoreProvider = {
     children : React.ReactNode;
@@ -22,16 +22,25 @@ export function useScoreUpdate(){
 }
 
 export function ScoreProvider ({children}: any) {
-    const [score, setScore] = useState(0)
 
-    function updateScore(){
+    const [state, dispatch] = useReducer(updateScore, {score: 0})
 
-     setScore((prevScore) => prevScore+1)
-    }
+    function updateScore(state: { score: number; }, action: { type: string; }) {
+        if (action.type === 'incremented_score') {
+          return {
+            score: state.score + 1
+          };
+        }else if(action.type ==='decrement_score')
+        return {
+            score: state.score -1
+        }
+        throw Error('Unknown action.');
+      }
+
 
     
     return (
-        <ScoreContext.Provider value={{score, setScore}}>
+        <ScoreContext.Provider value={{state, dispatch}}>
             <ScoreUpdateContext.Provider value={updateScore}>
                 {children}
             </ScoreUpdateContext.Provider>

@@ -8,7 +8,7 @@ import Rock from '../components/Rock'
 import './StepTwo.css'
 import Empty from '../components/Empty'
 import { Link } from 'react-router-dom'
-import {useScore, useScoreUpdate } from '../ScoreContext'
+import {useScore} from '../ScoreContext'
 
 
 
@@ -57,9 +57,7 @@ function houseChoice(){
 
 
 function winOrLose(){
-  // @ts-ignore
-    
-
+  // @ts-ignore  
 
   if(chosen=='Scissors')  {
     if(house==1){
@@ -92,7 +90,7 @@ function winOrLose(){
       return renderVictory.current="YOU LOSE"
     }
     else if(house==2){
-      prevScore.current++
+      
       return renderVictory.current="YOU WIN"
     }
     else if(house==3){
@@ -103,16 +101,7 @@ function winOrLose(){
 
 }
 
-const updateScore = useScoreUpdate()
-const score = useScore()
-let prevScore = useRef(0)
-console.log(prevScore.current-1)
-  useEffect(()=>{
-    updateScore(prevScore.current-1)
-  },[prevScore.current])
-
-
-
+const state  = useScore()
 
 
   return  (<>
@@ -135,10 +124,19 @@ console.log(prevScore.current-1)
         <div className='winorloss'>
         <h1 className='delay'>{winOrLose()}</h1>
         
-        <Link to="/"><button className='playagain'><p>PLAY AGAIN</p></button></Link>
+        <Link to="/">
+          <button className='playagain' onClick={
+              isVictory=="IT'S A TIE!" ? ()=>{} :
+              isVictory=='YOU WIN' ?
+              ()=>{state.dispatch({type: 'incremented_score'})} 
+              : ()=>{state.dispatch({type: 'decrement_score'})}}>
+            <p>PLAY AGAIN</p>
+          </button>
+        </Link>
       </div>  
     </>
   )
+  
 }
 
 export default Steptwo

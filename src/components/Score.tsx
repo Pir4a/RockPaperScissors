@@ -1,12 +1,12 @@
 
-import { ScoreProvider, useScore, useScoreUpdate } from "../ScoreContext"
+import {useScore} from "../ScoreContext"
 import "./Score.css"
 
 
 function Score() {
 
-    const score = useScore()
-    
+    const state = useScore()
+  
 
   return (
         <div className='scorecontainer'>
@@ -19,7 +19,7 @@ function Score() {
             </div>
             <div className='score'>
                 <p>SCORE</p>
-                <h3>{score?.score}</h3>
+                <h3>{state.state.score}</h3>
             </div>
         </div>
  )
