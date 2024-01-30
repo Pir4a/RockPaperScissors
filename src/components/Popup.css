@@ -42,3 +42,60 @@
     width: 350px;
     height: 320px;
 }
+@media(width>800px){
+    .popupcontainer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100dvh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0,0,0,0.75)
+    }
+    .popup{
+        position: relative;
+        padding: 31px;
+        border-radius: 10px;
+        height: 420px;
+        width: 400px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: start;
+    
+    }.imgcontainer{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    .imgcontainer img {
+        margin-top: 40px;
+        height: 280px;
+        
+    }
+    .rulestext h1 {
+        font-size: 30px;
+        color: #404662;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight: bolder;
+    }
+    .closebtn {
+        position: absolute;
+        top: 0px;
+        right: 10px;
+        cursor: pointer;
+        width: 100px;
+        height: 100px;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }   
+}

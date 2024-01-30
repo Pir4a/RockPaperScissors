@@ -118,3 +118,67 @@
         transform: rotate(60deg);
     }
 }
+
+@media(width > 850px){
+
+    .choicecontainer {
+        margin-top: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .choicecontainer img {
+        width: 81px;
+    }
+    .inner {
+        display: flex ;
+        align-items: center;
+        justify-content: center;
+        width: 180px;
+        height: 180px;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: inset 1px 8px hsl(226, 19%, 77%, 0.6);
+    }
+    
+    .outer {
+        position: relative;
+        display: flex ;
+        align-items: center;
+        justify-content: center;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        
+    }
+    .twofirsts {
+        position: relative;
+        gap: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .line {
+        left: 40%;
+        top: 40%;
+        position: absolute;
+        width: 150px;
+        height: 19px;
+        background-color:#16243D;
+    }
+    .right {
+        z-index: -1;
+        left: 52%;
+        top: 100%;
+        transform: rotate(-60deg);
+    }
+    
+    .left {
+        z-index: -1;
+        left: 22%;
+        top: 100%;
+        transform: rotate(60deg);
+    }
+}
