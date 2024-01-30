@@ -52,8 +52,10 @@
 
 @media(width > 850px){
 .scorecontainer {
+    margin: auto;
     margin-top: 60px;
     border-radius: 20px;
+    width: auto;
     width: 850px;
     height: 180px;
 }

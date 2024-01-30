@@ -105,10 +105,10 @@ const state  = useScore()
 
 
   return  (<>
-    <div className='choicecontainer'> 
-        <div className='twofirsts'>
+    <div className='choicecontainer two'> 
+        <div className='twofirsts p'>
          <div className='pick r'><div className={isVictory=='YOU WIN' ? 'glow' : ''}></div>{returnchoice()}
-          <p>YOU PICKED</p>
+          <p className='picked'>YOU PICKED</p>
           </div>
           <div className='pick'>
             
@@ -116,7 +116,7 @@ const state  = useScore()
               
               <div className="absolute"><Empty/></div>
               <div className='house'> <div className={isVictory=='YOU LOSE' ? 'glow' : ''}></div>{houseChoice()}</div>
-              <p>THE HOUSE PICKED</p>
+              <p className='picked'>THE HOUSE PICKED</p>
                   </div>
                   </div>
                 
